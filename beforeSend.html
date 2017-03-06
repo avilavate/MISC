@@ -1,0 +1,45 @@
+<!DOCTYPE html>>
+
+<head>
+    <title>
+        ::beforeSend Sample::
+    </title>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script>
+       
+$(document).ready(function(){
+    var isCached=function(xhr){
+        if(1 == 2) //just an example
+        {
+             //xhr.done();
+        };
+        else{return true;}
+        //this works for me
+    };
+    $("#btn").bind("click",function(){
+  $.ajax({
+    url : 'http://www.thomas-bayer.com/sqlrest/CUSTOMER/',
+ 
+    beforeSend : isCached,
+    complete: function(){
+        console.log('DONE');
+    },
+    success:function(data){
+        console.dir(data);
+    }
+});
+
+ 
+});   });
+           
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">clieck me</button>
+    <div id="div1"></div>
+</body>
+
+</html>
