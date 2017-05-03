@@ -1,0 +1,20 @@
+{
+  "name": "ioc-demo",
+  "version": "1.0.0",
+  "description": "A demo app showing IOC and factory pattern in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "factory",
+    "design",
+    "patter",
+    "IOC"
+  ],
+  "author": "Avil",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
