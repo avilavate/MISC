@@ -12,11 +12,16 @@
     <script>
         var wait = function (ms) {
             var _self = this;
-       //     console.log(_self);
+            //     console.log(_self);
             let p = new Promise((res, rej) => {
+
                 console.log(this);
                 setTimeout(() => {
-                    res("Promise resolved.");
+                    let num=Math.floor((Math.random()) * 100);
+                    console.log(num);
+                    if (num % 2 === 0)
+                        res("Promise resolved.");
+                    else rej("Promise rejected.");
                 }, ms, _self);
             });
             return p;
@@ -29,8 +34,8 @@
             value: 1
         }
 
-    //    var sample1 = function () { console.log(this.value) }
-         var bindedFn=myObj.wait.bind(myObj, 1000);
+        //    var sample1 = function () { console.log(this.value) }
+        var bindedFn = myObj.wait.bind(myObj, 1000);
         myObj.wait().then((message) => { console.log(message); });
     </script>
 </body>
