@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/acroNameBuster.js",
+            "program": "${workspaceRoot}/promise.js",
             "cwd": "${workspaceRoot}"
         },
         {
