@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var wait = function (ms) {
+            var _self = this;
+       //     console.log(_self);
+            let p = new Promise((res, rej) => {
+                console.log(this);
+                setTimeout(() => {
+                    res("Promise resolved.");
+                }, ms, _self);
+            });
+            return p;
+        }
+
+        //calling
+        var myObj = {
+            wait: wait,
+            sample: () => { console.log("sample", this) },
+            value: 1
+        }
+
+    //    var sample1 = function () { console.log(this.value) }
+         var bindedFn=myObj.wait.bind(myObj, 1000);
+        myObj.wait().then((message) => { console.log(message); });
+    </script>
+</body>
+
+</html>

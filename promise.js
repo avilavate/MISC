@@ -30,7 +30,7 @@ a().
     then(aMessage => {
         console.log(aMessage);
         return b();
-    }, errA=>{console.log("brom err fun of a", errA)}).
+    }, errA=>{console.log("from err fun of a", errA)}).
 
     then(bMessage => {
         console.log("b", bMessage);
